@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { DepartmentListComponent } from './components/department/department-list/department-list.component';
 import { MatSelectModule } from '@angular/material/select';
 import { CostCenterListComponent } from './components/cost-center/cost-center-list/cost-center-list.component';
 import { CostCenterEditComponent } from './components/cost-center/cost-center-edit/cost-center-edit.component';

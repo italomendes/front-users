@@ -42,4 +42,9 @@ export class CostCenterService {
     }
     return this.httpClient.post(endpoint, payload, config);
   }
+
+  public delete(id: string) {
+    const endpoint = `${this.info.apiBase}/cost-center/`;
+    return this.httpClient.delete(`${endpoint}/${id}`);
+  }
 }

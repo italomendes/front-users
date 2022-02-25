@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { LoginComponent } from './components/login/login.component';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
-import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { DepartmentListComponent } from './components/department/department-list/department-list.component';
 import { CostCenterListComponent } from './components/cost-center/cost-center-list/cost-center-list.component';
 import { CostCenterEditComponent } from './components/cost-center/cost-center-edit/cost-center-edit.component';
 

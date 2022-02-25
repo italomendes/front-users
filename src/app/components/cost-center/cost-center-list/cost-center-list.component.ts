@@ -32,5 +32,9 @@ export class CostCenterListComponent implements OnInit {
     this.router.navigate(['/cost-centers/new']);
   }
 
+  delete(id: string) {
+    this.costCenterService.delete(id).subscribe();
+  }
+
   ngOnInit(): void {}
 }
