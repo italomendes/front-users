@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="main-card" fxFlex="80">
+    <mat-list>
+      <div mat-subheader>Funcionários</div>
+      <mat-list-item>
+        <span fxFlex>Nome</span>
+        <span fxFlex>Departamento</span>
+        <span fxFlex>Centro de custo</span>
+        <span fxFlex="5"></span>
+      </mat-list-item>
+      <div style="margin-bottom: 20px;">
+        <mat-divider ></mat-divider>
+      </div>
+      <mat-list-item *ngFor="let user of employees">
+        <div fxLayout="row" fxFill>
+          <div mat-line fxFlex>{{user.name}}</div>
+          <div mat-line fxFlex>{{user.department.name}}</div>
+          <div mat-line fxFlex>{{user.department.costCenter.name}}</div>
+          <mat-icon fxFlex="5">edit</mat-icon>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
+
