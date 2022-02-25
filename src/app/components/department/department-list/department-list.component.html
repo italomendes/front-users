@@ -10,7 +10,10 @@
             <mat-select [(ngModel)]="selectedCostCenter" (selectionChange)="selectCostCenter($event)">
               <mat-option *ngFor="let costCenter of costCenters" [value]="costCenter">{{costCenter.name}}</mat-option>
             </mat-select>
-        </mat-form-field>
+          </mat-form-field>
+        <button mat-fab color="accent" (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
         </div>
         <mat-list-item>
           <span fxFlex>Nome</span>
@@ -26,7 +29,8 @@
         <div fxLayout="row" fxFill>
           <div mat-line fxFlex>{{department.name}}</div>
           <div mat-line fxFlex>{{department.costCenter.name}}</div>
-          <mat-icon fxFlex="5">edit</mat-icon>
+          <mat-icon fxFlex="5" (click)="edit(department.id)">edit</mat-icon>
+          <mat-icon fxFlex="5" (click)="delete(department.id)">delete</mat-icon>
         </div>
       </mat-list-item>
     </mat-list>

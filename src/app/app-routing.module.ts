@@ -6,6 +6,7 @@ import { EmployeesListComponent } from './components/employees-list/employees-li
 import { DepartmentListComponent } from './components/department/department-list/department-list.component';
 import { CostCenterListComponent } from './components/cost-center/cost-center-list/cost-center-list.component';
 import { CostCenterEditComponent } from './components/cost-center/cost-center-edit/cost-center-edit.component';
+import { DepartmentEditComponent } from './components/department/department-edit/department-edit.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -32,6 +33,16 @@ const routes: Routes = [
   {
     path: 'cost-centers/new',
     component: CostCenterEditComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'departments/:id',
+    component: DepartmentEditComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'departments/new',
+    component: DepartmentEditComponent,
     canActivate: [AuthGuardService],
   },
 ];

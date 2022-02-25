@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="main-card" fxFlex="80">
+    <mat-list>
+      <div mat-subheader>Centros de custos</div>
+      <div style="margin-bottom: 20px;">
+        <mat-divider ></mat-divider>
+      </div>
+    </mat-list>
+    <form [formGroup]="form" class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>nome</mat-label>
+        <input matInput formControlName="name" placeholder="Nome">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Centro de custo</mat-label>
+        <mat-select formControlName="costCenter" [compareWith]="compareFn">
+          <mat-option *ngFor="let costCenter of costCenters" [value]="costCenter">{{costCenter.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="save()">Salvar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

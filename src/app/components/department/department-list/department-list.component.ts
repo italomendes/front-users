@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { CostCenter } from 'src/app/models/cost-center.model';
 import { Department } from 'src/app/models/department.model';
@@ -17,7 +18,8 @@ export class DepartmentListComponent implements OnInit {
 
   constructor(
     private departmentService: DepartmentService,
-    private costCenterService: CostCenterService
+    private costCenterService: CostCenterService,
+    private router: Router
   ) {
     this.departmentService
       .getAllDepartments()
@@ -44,5 +46,17 @@ export class DepartmentListComponent implements OnInit {
         this.departments = departments;
       });
     console.log(event);
+  }
+
+  edit(id: string) {
+    this.router.navigate(['/departments/', id]);
+  }
+
+  add() {
+    this.router.navigate(['/departments/new']);
+  }
+
+  delete(id: string) {
+    this.departmentService.delete(id).subscribe();
   }
 }
