@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { MatListModule } from '@angular/material/list';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [AppComponent, LoginComponent, EmployeesListComponent],
   imports: [
@@ -38,6 +38,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     HttpClientModule,
     MatListModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
