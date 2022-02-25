@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { MatSelectModule } from '@angular/material/select';
+import { CostCenterListComponent } from './components/cost-center-list/cost-center-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
     LoginComponent,
     EmployeesListComponent,
     DepartmentListComponent,
+    CostCenterListComponent,
   ],
   imports: [
     BrowserModule,

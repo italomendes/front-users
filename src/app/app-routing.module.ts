@@ -4,6 +4,7 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { LoginComponent } from './components/login/login.component';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { CostCenterListComponent } from './components/cost-center-list/cost-center-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'departments',
     component: DepartmentListComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'cost-centers',
+    component: CostCenterListComponent,
     canActivate: [AuthGuardService],
   },
 ];
