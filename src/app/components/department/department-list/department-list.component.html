@@ -1,0 +1,38 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="main-card" fxFlex="80">
+    <mat-list>
+      <div>
+        <div>
+          <div mat-subheader>Departamentos</div>
+          <span fxFlex></span>
+          <mat-form-field appearance="fill">
+            <mat-label>Centro de custo</mat-label>
+            <mat-select [(ngModel)]="selectedCostCenter" (selectionChange)="selectCostCenter($event)">
+              <mat-option *ngFor="let costCenter of costCenters" [value]="costCenter">{{costCenter.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <button mat-fab color="accent" (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
+        </div>
+        <mat-list-item>
+          <span fxFlex>Nome</span>
+          <span fxFlex>Centro de custo</span>
+          <span fxFlex="5"></span>
+        </mat-list-item>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <mat-divider ></mat-divider>
+      </div>
+      <mat-list-item *ngFor="let department of departments">
+        <div fxLayout="row" fxFill>
+          <div mat-line fxFlex>{{department.name}}</div>
+          <div mat-line fxFlex>{{department.costCenter.name}}</div>
+          <mat-icon fxFlex="5" (click)="edit(department.id)">edit</mat-icon>
+          <mat-icon fxFlex="5" (click)="delete(department.id)">delete</mat-icon>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
