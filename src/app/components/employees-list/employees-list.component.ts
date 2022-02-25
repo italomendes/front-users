@@ -21,15 +21,4 @@ export class EmployeesListComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  // public getAllUsers(): User[] {
-  //   let users: User[] = [];
-  //   this.userService
-  //     .getAllUsers()
-  //     .pipe(take(1))
-  //     .subscribe((_users: User[]) => {
-  //       users = _users;
-  //     });
-  //   return users;
-  // }
 }
