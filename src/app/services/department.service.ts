@@ -45,9 +45,9 @@ export class DepartmentService {
       );
   }
 
-  public createOrUpdate(costCenter: any, id?: string) {
+  public createOrUpdate(department: any, id?: string) {
     const endpoint = `${this.info.apiBase}/department/`;
-    const payload = JSON.stringify(costCenter);
+    const payload = JSON.stringify(department);
     const config = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };

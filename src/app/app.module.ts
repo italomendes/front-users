@@ -17,7 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EmployeesListComponent } from './components/employees-list/employees-list.component';
+import { EmployeesListComponent } from './components/employee/employees-list/employees-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DepartmentListComponent } from './components/department/department-list/department-list.component';
@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CostCenterListComponent } from './components/cost-center/cost-center-list/cost-center-list.component';
 import { CostCenterEditComponent } from './components/cost-center/cost-center-edit/cost-center-edit.component';
 import { DepartmentEditComponent } from './components/department/department-edit/department-edit.component';
+import { EmployeeEditComponent } from './components/employee/employee-edit/employee-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DepartmentEditComponent } from './components/department/department-edit
     CostCenterListComponent,
     CostCenterEditComponent,
     DepartmentEditComponent,
+    EmployeeEditComponent,
   ],
   imports: [
     BrowserModule,

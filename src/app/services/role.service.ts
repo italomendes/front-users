@@ -1,32 +1,32 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, take } from 'rxjs';
-import { User } from '../models/user.model';
+import { Observable, take, map } from 'rxjs';
+import { Role } from '../models/role.model';
 import { InfoService } from './info.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class RoleService {
   constructor(private httpClient: HttpClient, private info: InfoService) {}
 
-  public getAllUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>(`${this.info.apiBase}/user`).pipe(
+  public getAllRoles(): Observable<Role[]> {
+    return this.httpClient.get<Role[]>(`${this.info.apiBase}/role`).pipe(
       take(1),
-      map((users: User[]) => users.map((user: User) => new User(user)))
+      map((roles: Role[]) => roles.map((role: Role) => new Role(role)))
     );
   }
 
-  public getById(id: string): Observable<User> {
-    return this.httpClient.get<User>(`${this.info.apiBase}/user/${id}`).pipe(
+  public getById(id: string): Observable<Role> {
+    return this.httpClient.get<Role>(`${this.info.apiBase}/role/${id}`).pipe(
       take(1),
-      map((user: User) => new User(user))
+      map((role: Role) => new Role(role))
     );
   }
 
-  public createOrUpdate(user: any, id?: string) {
-    const endpoint = `${this.info.apiBase}/user/`;
-    const payload = JSON.stringify(user);
+  public createOrUpdate(role: any, id?: string) {
+    const endpoint = `${this.info.apiBase}/role/`;
+    const payload = JSON.stringify(role);
     const config = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
@@ -38,7 +38,7 @@ export class UserService {
   }
 
   public delete(id: string) {
-    const endpoint = `${this.info.apiBase}/user/`;
+    const endpoint = `${this.info.apiBase}/role/`;
     return this.httpClient.delete(`${endpoint}/${id}`);
   }
 }
