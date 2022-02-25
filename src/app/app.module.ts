@@ -22,7 +22,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DepartmentListComponent } from './components/department-list/department-list.component';
 import { MatSelectModule } from '@angular/material/select';
-import { CostCenterListComponent } from './components/cost-center-list/cost-center-list.component';
+import { CostCenterListComponent } from './components/cost-center/cost-center-list/cost-center-list.component';
+import { CostCenterEditComponent } from './components/cost-center/cost-center-edit/cost-center-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CostCenterListComponent } from './components/cost-center-list/cost-cent
     EmployeesListComponent,
     DepartmentListComponent,
     CostCenterListComponent,
+    CostCenterEditComponent,
   ],
   imports: [
     BrowserModule,

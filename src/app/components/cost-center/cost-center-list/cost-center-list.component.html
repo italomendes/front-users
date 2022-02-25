@@ -1,7 +1,14 @@
 <div fxLayout="row" fxLayoutAlign="center center">
   <mat-card class="main-card" fxFlex="80">
     <mat-list>
-      <div mat-subheader>Centros de custos</div>
+      <div>
+        <div mat-subheader>Centros de custos</div>
+        <span fxFlex></span>
+        <button mat-fab color="accent" (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
       <mat-list-item>
         <span fxFlex>Nome</span>
       </mat-list-item>
@@ -12,7 +19,7 @@
         <div fxLayout="row" fxFill>
           <div mat-line fxFlex>{{costCenter.name}}</div>
           <span fxFlex></span>
-          <mat-icon fxFlex="5">edit</mat-icon>
+          <mat-icon fxFlex="5" (click)="edit(costCenter.id)">edit</mat-icon>
         </div>
       </mat-list-item>
     </mat-list>
