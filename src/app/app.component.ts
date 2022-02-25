@@ -10,9 +10,9 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   constructor(public auth: AuthService, public router: Router) {}
 
-  public getUserName() {
-    return this.auth.loggedUser?.name;
-  }
+  // public getUserName() {
+  //   return this.auth.loggedUser?.name;
+  // }
 
   logout() {
     this.auth.logout();

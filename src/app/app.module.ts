@@ -19,9 +19,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { DepartmentListComponent } from './components/department-list/department-list.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, EmployeesListComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    EmployeesListComponent,
+    DepartmentListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,6 +46,8 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     HttpClientModule,
     MatListModule,
+    MatSidenavModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

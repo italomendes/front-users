@@ -1,12 +1,28 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span>My App</span>
   <span class="example-spacer"></span>
-  <span>{{getUserName()}}</span>
+  <!-- <span>{{getUserName()}}</span> -->
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon *ngIf="auth.isLoggedIn()" (click)="logout()">logout</mat-icon>
+    <mat-icon (click)="logout()">logout</mat-icon>
   </button>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item [routerLink]="'home'"> Funcionários </a>
+      <a mat-list-item [routerLink]="'departments'"> Departamentos </a>
+      <a mat-list-item [routerLink]="'cost-centers'"> Centros de Custo </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: calc(100vh - 64px);">
+
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
